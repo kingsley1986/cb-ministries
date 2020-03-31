@@ -12,6 +12,8 @@ const mongoose = require('mongoose');
 
 
 var indexRouter = require('./routes/index');
+var postRouter = require('./routes/posts');
+
 var usersRouter = require('./routes/users');
 
 var app = express();
@@ -40,6 +42,7 @@ app.use(cookieParser());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/posts', postRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
